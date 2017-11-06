@@ -1,0 +1,30 @@
+version: '2'
+services:
+  rutorrent:
+    image: linuxserver/rutorrent
+    stdin_open: true
+    volumes:
+    - {rutorrent_config_path}:/config
+    - {rutorrent_download_path}:/downloads
+    tty: true
+    ports:
+    - {rutorrent_web_port}:80/tcp
+    - {rutorrent_rpc_port}:5000/tcp
+    - {rutorrent_public_port}:51413/tcp
+    - {rutorrent_public_port_2}:6881/udp
+    labels:
+      io.rancher.container.pull_image: always
+  plex:
+    image: timhaak/plex
+    environment:
+      PLEX_USERNAME: {plex_username}
+      PLEX_PASSWORD: {plex_password}
+    stdin_open: true
+    volumes:
+    - {plex_config}:/config
+    - {rutorrent_download_path}:/data
+    tty: true
+    ports:
+    - {plex_port}:32400/tcp
+    labels:
+      io.rancher.container.pull_image: always

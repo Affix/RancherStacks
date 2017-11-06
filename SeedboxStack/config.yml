@@ -1,0 +1,5 @@
+name: rutorrent Seedbox
+description: |
+  Plex and ruTorrent stack for Rancher
+version: 1.0
+category: seedbox

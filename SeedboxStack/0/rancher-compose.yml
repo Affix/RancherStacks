@@ -1,0 +1,58 @@
+
+.catalog:
+  name: plex
+  version: 1.0
+  description: Plex Media Server
+  questions:
+    - variable: "plex_username"
+      label: "Plex Username"
+      required: true
+      type: "string"
+      description: "plex.tv username"
+    - variable: "plex_password"
+      label: "Plex Password"
+      required: true
+      type: "string"
+      description: "plex.tv password"
+    - variable: "plex_config"
+      label: "Plex Configuration Path"
+      required: true
+      type: "string"
+      description: "plex configuration path"
+    - variable: "plex_port"
+      label: "Plex server public port"
+      required: true
+      default: 32400
+  name: rutorrent
+  version: 1.0
+  description: "rutorrent rtorrent web UI"
+    - variable: "rutorrent_config_path"
+      label: "ruTorrent Configuration Path"
+      required: true
+      type: "string"
+      description: "rutorrent configuration path"
+    - variable: "rutorrent_download_path"
+      label: "Downloads Path"
+      required: true
+      type: "string"
+      description: "Completed Downloads Path"
+    - variable: "rutorrent_public_port"
+      label: "ruTorrent public seeding port"
+      required: true
+      default: 51413
+      type: int
+    - variable: "rutorrent_public_port2"
+      label: "ruTorrent public port"
+      required: true
+      default: 6881
+      type: int
+    - variable: "rutorrent_web_port"
+      label: "ruTorrent public port"
+      required: true
+      default: 9000
+      type: int
+    - variable: "rutorrent_rpc_port"
+      label: "ruTorrent RPC port"
+      required: true
+      default: 5000
+      type: int
